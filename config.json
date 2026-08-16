@@ -1,0 +1,53 @@
+{
+  "company": {
+    "name": "Frigtec",
+    "tagline": "Coldroom & Refrigeration Specialists",
+    "description": "Brisbane's coldroom and commercial refrigeration specialists. Expert installation, maintenance and emergency repairs for walk-in coolrooms, freezers and all commercial refrigeration systems.",
+    "phone": "0421 228 034",
+    "email": "Enquiries@frigtec.com.au",
+    "address": "Brisbane, Queensland, Australia"
+  },
+  "hero": {
+    "title": "FRIGTEC",
+    "subtitle": "Brisbane's coldroom and commercial refrigeration specialists. Expert installation, maintenance and 24/7 emergency repairs for walk-in coolrooms, freezers and all refrigeration systems.",
+    "cta_text": "Get a Quote",
+    "cta_link": "#contact"
+  },
+  "services": [
+    {
+      "icon": "images/gallery/project-03.jpg",
+      "title": "Coldroom Installation",
+      "description": "Specialist installation of walk-in coolrooms, freezers and commercial refrigeration systems"
+    },
+    {
+      "icon": "images/gallery/project-14.jpg",
+      "title": "Refrigeration Maintenance",
+      "description": "Preventative maintenance for coldrooms, coolrooms and all commercial refrigeration equipment"
+    },
+    {
+      "icon": "images/gallery/project-06.jpg",
+      "title": "Emergency Coldroom Repairs",
+      "description": "24/7 emergency breakdown repairs for coldrooms, freezers and refrigeration systems"
+    }
+
+  ],
+  "about": {
+    "title": "Coldroom & Refrigeration Specialists",
+    "content": "Frigtec specialises in commercial coldrooms and refrigeration systems across Brisbane and the Gold Coast. From walk-in coolrooms and freezers to complete refrigeration installations, we provide expert service, emergency repairs and professional maintenance to keep your cold storage running efficiently and minimise costly downtime."
+  },
+  "social": {
+  "instagram": "https://www.instagram.com/frigtec_/",
+  "facebook": "https://facebook.com/yourpage",
+  "twitter": "https://twitter.com/yourhandle",
+  "linkedin": "https://linkedin.com/company/yourcompany",
+  "youtube": "https://youtube.com/@yourchannel",
+  "tiktok": "https://tiktok.com/@yourhandle"
+  },
+  "footer": {
+    "additional_info": "Fully Licensed & Insured",
+    "arc_license": "ARC License: AU069163",
+    "electrical_license": "Electrical License: 169966",
+    "qbcc_license": "QBCC License: 15306157",
+    "abn": "ABN: 66509725103"    
+  }
+}

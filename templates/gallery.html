@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Our Work - {{ config.company.name }} | Refrigeration Projects Brisbane & Gold Coast</title>
+    <meta name="description" content="View Frigtec's portfolio of completed refrigeration and HVAC projects across Brisbane and Gold Coast. Professional installations, maintenance, and repairs.">
+    <meta name="keywords" content="refrigeration projects brisbane, HVAC installations gold coast, commercial cooling portfolio, refrigeration gallery">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/branding/logo1.png') }}">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/branding/logo1.png') }}" alt="{{ config.company.name }} Logo">
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
+                    <li><a href="{{ url_for('gallery') }}" class="nav-link active">Gallery</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero -->
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">Our Work</h1>
+            <p class="page-subtitle">Showcasing our refrigeration and HVAC projects across Brisbane and Gold Coast</p>
+        </div>
+    </section>
+
+    <!-- Gallery Intro -->
+    <section class="gallery-intro-section">
+        <div class="container">
+            <div class="gallery-intro-content">
+                <h2>Quality Workmanship You Can See</h2>
+                <p class="lead-text">At Frigtec, we're proud of the work we do. Browse through our portfolio of completed projects to see the quality and professionalism we bring to every job.</p>
+                <p>From small <a href="{{ url_for('services') }}">maintenance tasks</a> to large-scale <a href="{{ url_for('services') }}">commercial installations</a>, each project demonstrates our commitment to excellence. We work with businesses across various industries, delivering reliable refrigeration and HVAC solutions that keep operations running smoothly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Gallery -->
+    <section class="gallery-main-section">
+        <div class="container">
+            <div class="gallery-carousel-large">
+                <button class="carousel-btn prev" id="prevBtn" aria-label="Previous image">‹</button>
+                <div class="carousel-container" id="carouselContainer">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Images loaded dynamically -->
+                    </div>
+                </div>
+                <button class="carousel-btn next" id="nextBtn" aria-label="Next image">›</button>
+            </div>
+            <div class="carousel-indicators" id="carouselIndicators">
+                <!-- Indicators loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid-section">
+        <div class="container">
+            <h2 class="section-title">Project Gallery</h2>
+            <div class="gallery-grid-full" id="galleryGrid">
+                <!-- Thumbnail grid loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Types -->
+    <section class="project-types-section">
+        <div class="container">
+            <h2 class="section-title">Types of Projects We Complete</h2>
+            
+            <div class="project-types-grid">
+                <div class="project-type-card">
+                    <h3>Commercial Installations</h3>
+                    <p>Complete refrigeration system installations for restaurants, supermarkets, and food service businesses. Our <a href="{{ url_for('services') }}">installation services</a> include walk-in coolrooms, display cabinets, and HVAC systems.</p>
+                </div>
+
+                <div class="project-type-card">
+                    <h3>System Upgrades</h3>
+                    <p>Modernizing outdated refrigeration equipment with energy-efficient solutions. We help businesses reduce operating costs while improving reliability.</p>
+                </div>
+
+                <div class="project-type-card">
+                    <h3>Emergency Repairs</h3>
+                    <p>Fast response to refrigeration breakdowns. Our <a href="{{ url_for('services') }}">24/7 repair service</a> minimizes downtime and prevents product loss.</p>
+                </div>
+
+                <div class="project-type-card">
+                    <h3>Preventative Maintenance</h3>
+                    <p>Regular servicing keeps systems running efficiently. Our <a href="{{ url_for('services') }}">maintenance programs</a> extend equipment life and prevent costly breakdowns.</p>
+                </div>
+
+                <div class="project-type-card">
+                    <h3>Cold Room Construction</h3>
+                    <p>Custom-designed cold storage solutions for warehouses, food processors, and distribution centers.</p>
+                </div>
+
+                <div class="project-type-card">
+                    <h3>HVAC Solutions</h3>
+                    <p>Air conditioning installation and maintenance for commercial premises, ensuring comfortable working environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Frigtec installed our new walk-in coolroom and the service was exceptional. Professional, on-time, and the system works perfectly. Highly recommended!"</p>
+                    <p class="testimonial-author">- Restaurant Owner, Brisbane CBD</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"When our refrigeration system failed on a Saturday night, Frigtec responded within 2 hours. They saved us from losing thousands in stock. Excellent emergency service!"</p>
+                    <p class="testimonial-author">- Supermarket Manager, Gold Coast</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"We've been using Frigtec for our regular maintenance for over a year. Our energy bills have dropped and we haven't had a single breakdown. Great value!"</p>
+                    <p class="testimonial-author">- Cafe Owner, South Brisbane</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need Refrigeration or HVAC Services?</h2>
+            <p>Let us help you with your next project. Contact us for a free consultation and quote.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-large">Request a Quote</a>
+                <a href="{{ url_for('about') }}" class="btn btn-secondary btn-large">Learn More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-additional">{{ config.footer.additional_info }}</p>
+                    <p class="footer-license">{{ config.footer.arc_license }}</p>
+                    <p class="footer-license">{{ config.footer.electrical_license }}</p>
+                    <p class="footer-license">{{ config.footer.qbcc_license }}</p>
+                    <p class="footer-abn">{{ config.footer.abn }}</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{ config.company.name }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

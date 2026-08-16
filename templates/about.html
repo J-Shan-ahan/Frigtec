@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>About {{ config.company.name }} | Licensed Refrigeration Specialists Brisbane</title>
+    <meta name="description" content="FrigTec is proudly led by Brandon a Refrigeration Mechanic with over 12 years of industry experience. With a strong background in commercial refrigeration and air conditioning, FrigTec is committed to delivering reliable workmanship, professional service and quality solutions on every job. From servicing and breakdowns to preventative maintenance and refrigeration requirements, we take pride in providing dependable results and building long-term relationships with our customers.">
+    <meta name="keywords" content="about frigtec, refrigeration company brisbane, ARCtick licensed, commercial cooling specialists, HVAC experts queensland">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/branding/logo1.png') }}">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/branding/logo1.png') }}" alt="{{ config.company.name }} Logo">
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
+                    <li><a href="{{ url_for('gallery') }}" class="nav-link">Gallery</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link active">About</a></li>
+                    <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">About Frigtec</h1>
+            <p class="page-subtitle">Your trusted partner for commercial refrigeration and HVAC solutions</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-intro">
+                <h2>Professional Refrigeration Services You Can Trust</h2>
+                <p class="lead-text">FrigTec is proudly led by Brandon, a Refrigeration Mechanic with over 12 years of industry experience. With a strong background in commercial refrigeration and air conditioning, FrigTec is committed to delivering reliable workmanship, professional service and quality solutions on every job.</p>
+                <p>From servicing and breakdowns to preventative maintenance and refrigeration requirements, we take pride in providing dependable results and building long-term relationships with our customers. We understand that reliable cooling systems are critical to your business operations, which is why we're committed to delivering prompt, professional service every time.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-icon">🏆</div>
+                    <h3>Fully Licensed & Certified</h3>
+                    <p>Our technicians hold all necessary licenses including {{ config.footer.arc_license }}, {{ config.footer.electrical_license }}, and {{ config.footer.qbcc_license }}. We're fully insured and compliant with all Australian standards.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">⚡</div>
+                    <h3>Fast Response Times</h3>
+                    <p>We know that refrigeration emergencies can't wait. Our <a href="{{ url_for('services') }}">24/7 breakdown repair service</a> ensures you get help when you need it most, typically within 2-4 hours.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">💼</div>
+                    <h3>Commercial Expertise</h3>
+                    <p>From restaurants and cafes to supermarkets and cold storage facilities, we have the expertise to handle any commercial refrigeration challenge. View our <a href="{{ url_for('gallery') }}">completed projects</a>.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">🔧</div>
+                    <h3>Comprehensive Services</h3>
+                    <p>We offer complete <a href="{{ url_for('services') }}">refrigeration solutions</a> including installation, preventative maintenance, and emergency repairs for all makes and models.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Frigtec?</h2>
+            
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <h3>Experience That Matters</h3>
+                    <p>With Brandon's 12+ years of hands-on experience working with all types of commercial refrigeration and HVAC systems, FrigTec has the expertise to handle any challenge. We've seen it all and fixed it all, from simple thermostat issues to complete system overhauls.</p>
+
+                    <h3>Quality Workmanship</h3>
+                    <p>We take pride in our work and stand behind every <a href="{{ url_for('services') }}">installation</a>, repair, and maintenance service we provide. Our attention to detail and commitment to quality ensures your systems run efficiently for years to come.</p>
+
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees, no surprises. We provide clear, upfront quotes before starting any work, so you know exactly what to expect.</p>
+
+                    <h3>Customer-Focused Approach</h3>
+                    <p>Your satisfaction is our priority. We work around your schedule to minimize disruption to your business operations and ensure you're completely happy with our service.</p>
+
+                    <h3>Energy Efficiency Experts</h3>
+                    <p>We help businesses reduce their energy costs through efficient system design, regular <a href="{{ url_for('services') }}">maintenance programs</a>, and expert advice on equipment upgrades.</p>
+                </div>
+
+                <div class="why-choose-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Emergency Service</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Licensed & Insured</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="service-areas-section">
+        <div class="container">
+            <h2 class="section-title">Areas We Serve</h2>
+            <p class="section-intro">Frigtec proudly serves businesses throughout Southeast Queensland, providing expert refrigeration and HVAC services to:</p>
+            
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3>Brisbane</h3>
+                    <p>CBD, North Brisbane, South Brisbane, East Brisbane, West Brisbane, and all surrounding suburbs</p>
+                </div>
+                <div class="area-card">
+                    <h3>Gold Coast</h3>
+                    <p>Surfers Paradise, Southport, Broadbeach, Burleigh Heads, and surrounding areas</p>
+                </div>
+                <div class="area-card">
+                    <h3>Logan & Ipswich</h3>
+                    <p>Comprehensive coverage across Logan City and Ipswich regions</p>
+                </div>
+                <div class="area-card">
+                    <h3>Sunshine Coast</h3>
+                    <p>Maroochydore, Caloundra, Noosa, and surrounding coastal areas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve -->
+    <section class="industries-section">
+        <div class="container">
+            <h2 class="section-title">Industries We Serve</h2>
+            
+            <div class="industries-grid">
+                <div class="industry-item">
+                    <h4>Restaurants & Cafes</h4>
+                    <p>Walk-in coolrooms, display fridges, ice machines, and kitchen refrigeration</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Supermarkets & Retail</h4>
+                    <p>Display cabinets, cold rooms, and commercial refrigeration systems</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Hotels & Hospitality</h4>
+                    <p>Bar refrigeration, kitchen systems, and HVAC solutions</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Food Processing</h4>
+                    <p>Industrial refrigeration, blast chillers, and cold storage</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Healthcare Facilities</h4>
+                    <p>Medical refrigeration, temperature-controlled storage</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Warehousing & Logistics</h4>
+                    <p>Cold storage facilities, refrigerated transport systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Work With Brisbane's Refrigeration Experts?</h2>
+            <p>Contact us today for a free quote or to discuss your refrigeration needs</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-large">Get In Touch</a>
+                <a href="tel:{{ config.company.phone }}" class="btn btn-secondary btn-large">Call {{ config.company.phone }}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-additional">{{ config.footer.additional_info }}</p>
+                    <p class="footer-license">{{ config.footer.arc_license }}</p>
+                    <p class="footer-license">{{ config.footer.electrical_license }}</p>
+                    <p class="footer-license">{{ config.footer.qbcc_license }}</p>
+                    <p class="footer-abn">{{ config.footer.abn }}</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{ config.company.name }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

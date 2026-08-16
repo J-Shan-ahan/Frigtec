@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Our Services - {{ config.company.name }} | Commercial Refrigeration & HVAC Brisbane</title>
+    <meta name="title" content="Our Services - {{ config.company.name }} | Commercial Refrigeration & HVAC Brisbane">
+    <meta name="description" content="Professional refrigeration services in Brisbane & Gold Coast: Installation, Maintenance, and Emergency Repairs. Licensed ARCtick technicians. 24/7 breakdown service available.">
+    <meta name="keywords" content="refrigeration installation, HVAC maintenance, breakdown repairs, commercial cooling, ARCtick licensed, Brisbane refrigeration services">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/branding/logo1.png') }}">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/branding/logo1.png') }}" alt="{{ config.company.name }} Logo">
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link active">Services</a></li>
+                    <li><a href="{{ url_for('index') }}#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="{{ url_for('index') }}#about" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">Our Services</h1>
+            <p class="page-subtitle">Professional refrigeration and HVAC solutions for your business</p>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    {% for service in config.services %}
+    <section class="service-detail {% if loop.index % 2 == 0 %}service-detail-alt{% endif %}">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-image">
+                    <img src="{{ url_for('static', filename=service.icon) }}" alt="{{ service.title }}">
+                </div>
+                <div class="service-detail-text">
+                    <h2 class="service-detail-title">{{ service.title }}</h2>
+                    <p class="service-detail-description">{{ service.description }}</p>
+                    
+                    {% if service.title == 'Installation' %}
+                    <div class="service-features">
+                        <h3>What We Install</h3>
+                        <ul>
+                            <li><strong>Commercial Refrigeration Systems</strong> - Walk-in coolrooms, freezers, and display cabinets</li>
+                            <li><strong>HVAC Units</strong> - Split systems, ducted air conditioning, and ventilation</li>
+                            <li><strong>Cold Storage Solutions</strong> - Custom-designed temperature-controlled environments</li>
+                            <li><strong>Ice Machines</strong> - Commercial ice makers for hospitality and food service</li>
+                            <li><strong>Refrigerated Transport</strong> - Truck and van refrigeration systems</li>
+                        </ul>
+                        
+                        <h3>Our Installation Process</h3>
+                        <p>We begin with a comprehensive site assessment to understand your specific cooling requirements. Our licensed technicians design a system tailored to your business needs, ensuring optimal efficiency and compliance with Australian standards. From initial consultation to final commissioning, we handle every aspect of the installation with precision and professionalism.</p>
+                        
+                        <h3>Why Choose Our Installation Service?</h3>
+                        <ul>
+                            <li>ARCtick licensed and fully insured technicians</li>
+                            <li>Compliance with AS/NZS standards and building codes</li>
+                            <li>Energy-efficient system design to reduce operating costs</li>
+                            <li>Minimal disruption to your business operations</li>
+                            <li>Comprehensive warranty on all installations</li>
+                            <li>Post-installation support and training</li>
+                        </ul>
+                    </div>
+                    
+                    {% elif service.title == 'Maintenance' %}
+                    <div class="service-features">
+                        <h3>Preventative Maintenance Programs</h3>
+                        <p>Regular maintenance is essential for keeping your refrigeration and HVAC systems running efficiently and preventing costly breakdowns. Our comprehensive maintenance programs are designed to extend equipment life, reduce energy consumption, and ensure food safety compliance.</p>
+                        
+                        <h3>What's Included</h3>
+                        <ul>
+                            <li><strong>Scheduled Inspections</strong> - Regular system checks and performance monitoring</li>
+                            <li><strong>Filter Cleaning & Replacement</strong> - Maintaining optimal airflow and efficiency</li>
+                            <li><strong>Refrigerant Level Checks</strong> - Ensuring proper cooling capacity</li>
+                            <li><strong>Electrical Component Testing</strong> - Preventing electrical failures</li>
+                            <li><strong>Condenser & Evaporator Cleaning</strong> - Maximizing heat transfer efficiency</li>
+                            <li><strong>Thermostat Calibration</strong> - Accurate temperature control</li>
+                            <li><strong>Door Seal Inspection</strong> - Preventing energy loss</li>
+                            <li><strong>Detailed Service Reports</strong> - Complete documentation of all work performed</li>
+                        </ul>
+                        
+                        <h3>Maintenance Plans</h3>
+                        <p>We offer flexible maintenance contracts tailored to your business needs - from quarterly visits for smaller systems to monthly inspections for critical cold storage facilities. Priority response times and discounted rates are included with all maintenance agreements.</p>
+                        
+                        <h3>Benefits of Regular Maintenance</h3>
+                        <ul>
+                            <li>Reduce energy costs by up to 30%</li>
+                            <li>Extend equipment lifespan by years</li>
+                            <li>Prevent unexpected breakdowns</li>
+                            <li>Maintain food safety compliance</li>
+                            <li>Priority service for emergencies</li>
+                        </ul>
+                    </div>
+                    
+                    {% elif service.title == 'Break down repairs' %}
+                    <div class="service-features">
+                        <h3>24/7 Emergency Repair Service</h3>
+                        <p>When your refrigeration system fails, every minute counts. Our emergency breakdown service provides rapid response to minimize product loss and business disruption. We understand the critical nature of commercial refrigeration and prioritize urgent repairs.</p>
+                        
+                        <h3>Common Repairs We Handle</h3>
+                        <ul>
+                            <li><strong>Compressor Failures</strong> - Diagnosis and replacement of faulty compressors</li>
+                            <li><strong>Refrigerant Leaks</strong> - Leak detection, repair, and recharging</li>
+                            <li><strong>Electrical Issues</strong> - Control board repairs and wiring problems</li>
+                            <li><strong>Temperature Control Problems</strong> - Thermostat and sensor replacement</li>
+                            <li><strong>Fan Motor Failures</strong> - Condenser and evaporator fan repairs</li>
+                            <li><strong>Door & Seal Issues</strong> - Gasket replacement and door adjustments</li>
+                            <li><strong>Defrost System Faults</strong> - Timer and heater element repairs</li>
+                            <li><strong>Ice Build-up Problems</strong> - Drainage and airflow corrections</li>
+                        </ul>
+                        
+                        <h3>Our Repair Process</h3>
+                        <p>We arrive equipped with a comprehensive range of parts and diagnostic tools to resolve most issues on the first visit. Our technicians quickly identify the problem, provide a clear explanation and quote, and complete repairs efficiently to get your system back online.</p>
+                        
+                        <h3>Emergency Response</h3>
+                        <ul>
+                            <li>Fast response times - typically within 2-4 hours</li>
+                            <li>Fully stocked service vehicles</li>
+                            <li>Experienced technicians available 24/7</li>
+                            <li>Upfront pricing with no hidden costs</li>
+                            <li>Warranty on all repair work</li>
+                            <li>Temporary cooling solutions if needed</li>
+                        </ul>
+                        
+                        <h3>Service Areas</h3>
+                        <p>We provide emergency breakdown services throughout Brisbane, Gold Coast, and surrounding areas. Contact us immediately if you're experiencing refrigeration issues.</p>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="service-cta">
+                        <a href="{{ url_for('index') }}#contact" class="btn btn-primary">Get a Quote</a>
+                        <a href="tel:{{ config.company.phone }}" class="btn btn-secondary">Call {{ config.company.phone }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+
+    <!-- Call to Action -->
+    <section class="services-cta">
+        <div class="container">
+            <h2>Need Professional Refrigeration Services?</h2>
+            <p>Contact us today for expert installation, maintenance, or emergency repairs</p>
+            <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-large">Contact Us Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-additional">{{ config.footer.additional_info }}</p>
+                    <p class="footer-license">{{ config.footer.arc_license }}</p>
+                    <p class="footer-license">{{ config.footer.electrical_license }}</p>
+                    <p class="footer-license">{{ config.footer.qbcc_license }}</p>
+                    <p class="footer-abn">{{ config.footer.abn }}</p>                    
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{ config.company.name }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
