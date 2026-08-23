@@ -37,8 +37,9 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
                     <li><a href="{{ url_for('services') }}" class="nav-link active">Services</a></li>
-                    <li><a href="{{ url_for('index') }}#gallery" class="nav-link">Gallery</a></li>
-                    <li><a href="{{ url_for('index') }}#about" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('environment') }}" class="nav-link">Environment</a></li>
+                    <li><a href="{{ url_for('codes_of_practice') }}" class="nav-link">Standards</a></li>
                     <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
@@ -54,117 +55,60 @@
         </div>
     </section>
 
-    <!-- Service Details -->
-    {% for service in config.services %}
-    <section class="service-detail {% if loop.index % 2 == 0 %}service-detail-alt{% endif %}">
+    <!-- Services Grid -->
+    <section class="services-section">
         <div class="container">
-            <div class="service-detail-content">
-                <div class="service-detail-image">
-                    <img src="{{ url_for('static', filename=service.icon) }}" alt="{{ service.title }}">
+            <div class="services-grid">
+                <!-- Air Conditioning Installation -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="{{ url_for('static', filename='images/services/aircon-installation/IMG_0850.jpeg') }}" alt="Air Conditioning Installation">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Air Conditioning Installation</h3>
+                        <p>Professional installation of commercial air conditioning systems for businesses across Brisbane. Expert HVAC system design and installation tailored to your requirements.</p>
+                        <a href="{{ url_for('service_aircon') }}" class="btn btn-primary">Learn More</a>
+                    </div>
                 </div>
-                <div class="service-detail-text">
-                    <h2 class="service-detail-title">{{ service.title }}</h2>
-                    <p class="service-detail-description">{{ service.description }}</p>
-                    
-                    {% if service.title == 'Installation' %}
-                    <div class="service-features">
-                        <h3>What We Install</h3>
-                        <ul>
-                            <li><strong>Commercial Refrigeration Systems</strong> - Walk-in coolrooms, freezers, and display cabinets</li>
-                            <li><strong>HVAC Units</strong> - Split systems, ducted air conditioning, and ventilation</li>
-                            <li><strong>Cold Storage Solutions</strong> - Custom-designed temperature-controlled environments</li>
-                            <li><strong>Ice Machines</strong> - Commercial ice makers for hospitality and food service</li>
-                            <li><strong>Refrigerated Transport</strong> - Truck and van refrigeration systems</li>
-                        </ul>
-                        
-                        <h3>Our Installation Process</h3>
-                        <p>We begin with a comprehensive site assessment to understand your specific cooling requirements. Our licensed technicians design a system tailored to your business needs, ensuring optimal efficiency and compliance with Australian standards. From initial consultation to final commissioning, we handle every aspect of the installation with precision and professionalism.</p>
-                        
-                        <h3>Why Choose Our Installation Service?</h3>
-                        <ul>
-                            <li>ARCtick licensed and fully insured technicians</li>
-                            <li>Compliance with AS/NZS standards and building codes</li>
-                            <li>Energy-efficient system design to reduce operating costs</li>
-                            <li>Minimal disruption to your business operations</li>
-                            <li>Comprehensive warranty on all installations</li>
-                            <li>Post-installation support and training</li>
-                        </ul>
+
+                <!-- Refrigeration Maintenance -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="{{ url_for('static', filename='images/services/refrigeration-maintenance/IMG_0279.jpeg') }}" alt="Refrigeration Maintenance">
                     </div>
-                    
-                    {% elif service.title == 'Maintenance' %}
-                    <div class="service-features">
-                        <h3>Preventative Maintenance Programs</h3>
-                        <p>Regular maintenance is essential for keeping your refrigeration and HVAC systems running efficiently and preventing costly breakdowns. Our comprehensive maintenance programs are designed to extend equipment life, reduce energy consumption, and ensure food safety compliance.</p>
-                        
-                        <h3>What's Included</h3>
-                        <ul>
-                            <li><strong>Scheduled Inspections</strong> - Regular system checks and performance monitoring</li>
-                            <li><strong>Filter Cleaning & Replacement</strong> - Maintaining optimal airflow and efficiency</li>
-                            <li><strong>Refrigerant Level Checks</strong> - Ensuring proper cooling capacity</li>
-                            <li><strong>Electrical Component Testing</strong> - Preventing electrical failures</li>
-                            <li><strong>Condenser & Evaporator Cleaning</strong> - Maximizing heat transfer efficiency</li>
-                            <li><strong>Thermostat Calibration</strong> - Accurate temperature control</li>
-                            <li><strong>Door Seal Inspection</strong> - Preventing energy loss</li>
-                            <li><strong>Detailed Service Reports</strong> - Complete documentation of all work performed</li>
-                        </ul>
-                        
-                        <h3>Maintenance Plans</h3>
-                        <p>We offer flexible maintenance contracts tailored to your business needs - from quarterly visits for smaller systems to monthly inspections for critical cold storage facilities. Priority response times and discounted rates are included with all maintenance agreements.</p>
-                        
-                        <h3>Benefits of Regular Maintenance</h3>
-                        <ul>
-                            <li>Reduce energy costs by up to 30%</li>
-                            <li>Extend equipment lifespan by years</li>
-                            <li>Prevent unexpected breakdowns</li>
-                            <li>Maintain food safety compliance</li>
-                            <li>Priority service for emergencies</li>
-                        </ul>
+                    <div class="service-card-content">
+                        <h3>Refrigeration Maintenance</h3>
+                        <p>Preventative maintenance for commercial refrigeration equipment to keep your systems running efficiently and prevent costly breakdowns.</p>
+                        <a href="{{ url_for('service_refrigeration') }}" class="btn btn-primary">Learn More</a>
                     </div>
-                    
-                    {% elif service.title == 'Break down repairs' %}
-                    <div class="service-features">
-                        <h3>24/7 Emergency Repair Service</h3>
-                        <p>When your refrigeration system fails, every minute counts. Our emergency breakdown service provides rapid response to minimize product loss and business disruption. We understand the critical nature of commercial refrigeration and prioritize urgent repairs.</p>
-                        
-                        <h3>Common Repairs We Handle</h3>
-                        <ul>
-                            <li><strong>Compressor Failures</strong> - Diagnosis and replacement of faulty compressors</li>
-                            <li><strong>Refrigerant Leaks</strong> - Leak detection, repair, and recharging</li>
-                            <li><strong>Electrical Issues</strong> - Control board repairs and wiring problems</li>
-                            <li><strong>Temperature Control Problems</strong> - Thermostat and sensor replacement</li>
-                            <li><strong>Fan Motor Failures</strong> - Condenser and evaporator fan repairs</li>
-                            <li><strong>Door & Seal Issues</strong> - Gasket replacement and door adjustments</li>
-                            <li><strong>Defrost System Faults</strong> - Timer and heater element repairs</li>
-                            <li><strong>Ice Build-up Problems</strong> - Drainage and airflow corrections</li>
-                        </ul>
-                        
-                        <h3>Our Repair Process</h3>
-                        <p>We arrive equipped with a comprehensive range of parts and diagnostic tools to resolve most issues on the first visit. Our technicians quickly identify the problem, provide a clear explanation and quote, and complete repairs efficiently to get your system back online.</p>
-                        
-                        <h3>Emergency Response</h3>
-                        <ul>
-                            <li>Fast response times - typically within 2-4 hours</li>
-                            <li>Fully stocked service vehicles</li>
-                            <li>Experienced technicians available 24/7</li>
-                            <li>Upfront pricing with no hidden costs</li>
-                            <li>Warranty on all repair work</li>
-                            <li>Temporary cooling solutions if needed</li>
-                        </ul>
-                        
-                        <h3>Service Areas</h3>
-                        <p>We provide emergency breakdown services throughout Brisbane, Gold Coast, and surrounding areas. Contact us immediately if you're experiencing refrigeration issues.</p>
+                </div>
+
+                <!-- Emergency Breakdown Repairs -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="{{ url_for('static', filename='images/services/emergency-breakdown/IMG_0066.jpeg') }}" alt="Emergency Breakdown Repairs">
                     </div>
-                    {% endif %}
-                    
-                    <div class="service-cta">
-                        <a href="{{ url_for('index') }}#contact" class="btn btn-primary">Get a Quote</a>
-                        <a href="tel:{{ config.company.phone }}" class="btn btn-secondary">Call {{ config.company.phone }}</a>
+                    <div class="service-card-content">
+                        <h3>Emergency Breakdown Repairs</h3>
+                        <p>24/7 emergency breakdown repairs for refrigeration and air conditioning systems. Fast response times to minimize product loss and business disruption.</p>
+                        <a href="{{ url_for('service_emergency') }}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- HVAC-R Service -->
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="{{ url_for('static', filename='images/services/hvac-service/IMG_2959.jpeg') }}" alt="HVAC-R Service">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>HVAC-R Service</h3>
+                        <p>Comprehensive HVAC-R servicing for all commercial refrigeration and air conditioning equipment. Expert maintenance and repairs for all systems.</p>
+                        <a href="{{ url_for('service_hvac') }}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    {% endfor %}
 
     <!-- Call to Action -->
     <section class="services-cta">

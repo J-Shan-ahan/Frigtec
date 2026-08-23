@@ -1,0 +1,23 @@
+[
+  {
+    "name": "John Smith",
+    "rating": 5,
+    "text": "Excellent service! Brandon was professional and fixed our coolroom quickly. Highly recommend Frigtec for all commercial refrigeration needs.",
+    "date": "2 weeks ago",
+    "initial": "J"
+  },
+  {
+    "name": "Sarah Johnson",
+    "rating": 5,
+    "text": "Fast response time for emergency repairs. Our walk-in freezer broke down and they had it running again within hours. Professional and reliable!",
+    "date": "1 month ago",
+    "initial": "S"
+  },
+  {
+    "name": "Mike Williams",
+    "rating": 5,
+    "text": "Great work on our air conditioning installation. Quality workmanship, fair pricing, and excellent customer service. Will definitely use again.",
+    "date": "2 months ago",
+    "initial": "M"
+  }
+]

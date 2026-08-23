@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refrigeration Maintenance - {{ config.company.name }} | Brisbane</title>
+    <meta name="description" content="Professional commercial refrigeration maintenance services in Brisbane. Preventative maintenance programs to keep your systems running efficiently.">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/branding/logo1.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/branding/logo1.png') }}" alt="{{ config.company.name }} Logo">
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link active">Services</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('environment') }}" class="nav-link">Environment</a></li>
+                    <li><a href="{{ url_for('codes_of_practice') }}" class="nav-link">Standards</a></li>
+                    <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">Refrigeration Maintenance</h1>
+            <p class="page-subtitle">Preventative maintenance programs to keep your refrigeration systems running efficiently</p>
+        </div>
+    </section>
+
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-image">
+                    <img src="{{ url_for('static', filename='images/services/refrigeration-maintenance/IMG_0279.jpeg') }}" alt="Refrigeration Maintenance">
+                </div>
+                <div class="service-detail-text">
+                    <h2 class="service-detail-title">Professional Refrigeration Maintenance</h2>
+                    <p class="service-detail-description">Regular maintenance is essential for keeping your commercial refrigeration systems running efficiently and preventing costly breakdowns. FrigTec's comprehensive maintenance programs extend equipment life, reduce energy consumption, and ensure food safety compliance.</p>
+                    
+                    <div class="service-features">
+                        <h3>Preventative Maintenance Programs</h3>
+                        <p>Our scheduled maintenance services are designed to catch potential issues before they become expensive problems. We provide thorough inspections, cleaning, and adjustments to keep your refrigeration equipment operating at peak performance.</p>
+                        
+                        <h3>What's Included in Our Maintenance Service</h3>
+                        <ul>
+                            <li><strong>Scheduled Inspections</strong> - Regular system checks and performance monitoring</li>
+                            <li><strong>Filter Cleaning & Replacement</strong> - Maintaining optimal airflow and efficiency</li>
+                            <li><strong>Refrigerant Level Checks</strong> - Ensuring proper cooling capacity</li>
+                            <li><strong>Electrical Component Testing</strong> - Preventing electrical failures and safety hazards</li>
+                            <li><strong>Condenser & Evaporator Cleaning</strong> - Maximizing heat transfer efficiency</li>
+                            <li><strong>Thermostat Calibration</strong> - Accurate temperature control for food safety</li>
+                            <li><strong>Door Seal Inspection</strong> - Preventing energy loss and temperature fluctuations</li>
+                            <li><strong>Compressor Performance Testing</strong> - Early detection of compressor issues</li>
+                            <li><strong>Defrost System Checks</strong> - Ensuring proper defrost cycles</li>
+                            <li><strong>Detailed Service Reports</strong> - Complete documentation of all work performed</li>
+                        </ul>
+                        
+                        <h3>Flexible Maintenance Plans</h3>
+                        <p>We offer customized maintenance contracts tailored to your specific needs - from quarterly visits for smaller systems to monthly inspections for critical cold storage facilities. All maintenance agreements include priority response times and discounted rates on repairs.</p>
+                        
+                        <h3>Benefits of Regular Maintenance</h3>
+                        <ul>
+                            <li>Reduce energy costs by up to 30% through improved efficiency</li>
+                            <li>Extend equipment lifespan by several years</li>
+                            <li>Prevent unexpected breakdowns and product loss</li>
+                            <li>Maintain food safety compliance and temperature logs</li>
+                            <li>Priority service for emergency repairs</li>
+                            <li>Lower repair costs through early problem detection</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="{{ url_for('index') }}#contact" class="btn btn-primary">Get a Quote</a>
+                        <a href="tel:{{ config.company.phone }}" class="btn btn-secondary">Call {{ config.company.phone }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-main-section">
+        <div class="container">
+            <h2 class="section-title">Our Refrigeration Maintenance Work</h2>
+            <div class="gallery-grid-full" id="serviceGallery"></div>
+        </div>
+    </section>
+
+    <section class="services-cta">
+        <div class="container">
+            <h2>Protect Your Investment with Regular Maintenance</h2>
+            <p>Contact us today to discuss a maintenance plan for your refrigeration systems</p>
+            <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-large">Contact Us Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-additional">{{ config.footer.additional_info }}</p>
+                    <p class="footer-license">{{ config.footer.arc_license }}</p>
+                    <p class="footer-license">{{ config.footer.electrical_license }}</p>
+                    <p class="footer-license">{{ config.footer.qbcc_license }}</p>
+                    <p class="footer-abn">{{ config.footer.abn }}</p>                    
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{ config.company.name }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        fetch('/api/gallery/refrigeration-maintenance')
+            .then(response => response.json())
+            .then(images => {
+                const gallery = document.getElementById('serviceGallery');
+                images.forEach(imagePath => {
+                    const img = document.createElement('img');
+                    img.src = imagePath;
+                    img.alt = 'Refrigeration Maintenance Project';
+                    gallery.appendChild(img);
+                });
+            });
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

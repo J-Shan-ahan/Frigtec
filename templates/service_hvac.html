@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HVAC-R Service - {{ config.company.name }} | Brisbane</title>
+    <meta name="description" content="Comprehensive HVAC-R servicing for commercial refrigeration and air conditioning equipment in Brisbane. Expert maintenance and repairs.">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/branding/logo1.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/branding/logo1.png') }}" alt="{{ config.company.name }} Logo">
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link active">Services</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('environment') }}" class="nav-link">Environment</a></li>
+                    <li><a href="{{ url_for('codes_of_practice') }}" class="nav-link">Standards</a></li>
+                    <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">HVAC-R Service</h1>
+            <p class="page-subtitle">Comprehensive servicing for all commercial refrigeration and air conditioning equipment</p>
+        </div>
+    </section>
+
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-image">
+                    <img src="{{ url_for('static', filename='images/services/hvac-service/IMG_2959.jpeg') }}" alt="HVAC-R Service">
+                </div>
+                <div class="service-detail-text">
+                    <h2 class="service-detail-title">Complete HVAC-R Servicing</h2>
+                    <p class="service-detail-description">FrigTec provides comprehensive HVAC-R (Heating, Ventilation, Air Conditioning, and Refrigeration) servicing for all types of commercial equipment. Our experienced technicians service, repair, and optimize your systems to ensure peak performance and energy efficiency.</p>
+                    
+                    <div class="service-features">
+                        <h3>Full-Service HVAC-R Solutions</h3>
+                        <p>Whether you need routine servicing, system upgrades, or performance optimization, our team has the expertise to handle all aspects of commercial HVAC-R systems. We work with all major brands and equipment types.</p>
+                        
+                        <h3>Equipment We Service</h3>
+                        <ul>
+                            <li><strong>Commercial Refrigeration</strong> - Walk-in coolrooms, freezers, display cabinets, and cold storage</li>
+                            <li><strong>Air Conditioning Systems</strong> - Split systems, ducted units, VRV/VRF, and package units</li>
+                            <li><strong>Ice Machines</strong> - Commercial ice makers and ice storage systems</li>
+                            <li><strong>Ventilation Systems</strong> - Exhaust fans, fresh air systems, and air handling units</li>
+                            <li><strong>Refrigerated Transport</strong> - Truck and van refrigeration units</li>
+                            <li><strong>Chillers & Condensing Units</strong> - Water-cooled and air-cooled systems</li>
+                        </ul>
+                        
+                        <h3>Our Service Capabilities</h3>
+                        <ul>
+                            <li><strong>Routine Servicing</strong> - Scheduled maintenance to keep systems running efficiently</li>
+                            <li><strong>Repairs & Troubleshooting</strong> - Expert diagnosis and repair of all issues</li>
+                            <li><strong>System Upgrades</strong> - Modernization and efficiency improvements</li>
+                            <li><strong>Performance Optimization</strong> - Fine-tuning for maximum efficiency</li>
+                            <li><strong>Refrigerant Management</strong> - Leak detection, recovery, and recharging</li>
+                            <li><strong>Compliance Testing</strong> - Ensuring systems meet Australian standards</li>
+                            <li><strong>Energy Audits</strong> - Identifying opportunities to reduce operating costs</li>
+                        </ul>
+                        
+                        <h3>Why Choose FrigTec for HVAC-R Service?</h3>
+                        <ul>
+                            <li>ARCtick licensed technicians with 12+ years experience</li>
+                            <li>Expertise across all commercial HVAC-R equipment</li>
+                            <li>Fast response times and flexible scheduling</li>
+                            <li>Comprehensive service reports and recommendations</li>
+                            <li>Competitive pricing with no hidden costs</li>
+                            <li>Warranty on all service work</li>
+                            <li>Ongoing support and maintenance plans available</li>
+                        </ul>
+                        
+                        <h3>Service Benefits</h3>
+                        <p>Regular professional servicing extends equipment life, reduces energy consumption, prevents costly breakdowns, and ensures your systems operate safely and efficiently. Our technicians identify potential issues early and provide cost-effective solutions to keep your business running smoothly.</p>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="{{ url_for('index') }}#contact" class="btn btn-primary">Get a Quote</a>
+                        <a href="tel:{{ config.company.phone }}" class="btn btn-secondary">Call {{ config.company.phone }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-main-section">
+        <div class="container">
+            <h2 class="section-title">Our HVAC-R Service Work</h2>
+            <div class="gallery-grid-full" id="serviceGallery"></div>
+        </div>
+    </section>
+
+    <section class="services-cta">
+        <div class="container">
+            <h2>Need Professional HVAC-R Service?</h2>
+            <p>Contact us today for expert servicing of your refrigeration and air conditioning systems</p>
+            <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-large">Contact Us Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-additional">{{ config.footer.additional_info }}</p>
+                    <p class="footer-license">{{ config.footer.arc_license }}</p>
+                    <p class="footer-license">{{ config.footer.electrical_license }}</p>
+                    <p class="footer-license">{{ config.footer.qbcc_license }}</p>
+                    <p class="footer-abn">{{ config.footer.abn }}</p>                    
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{ config.company.name }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        fetch('/api/gallery/hvac-service')
+            .then(response => response.json())
+            .then(images => {
+                const gallery = document.getElementById('serviceGallery');
+                images.forEach(imagePath => {
+                    const img = document.createElement('img');
+                    img.src = imagePath;
+                    img.alt = 'HVAC-R Service Work';
+                    gallery.appendChild(img);
+                });
+            });
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

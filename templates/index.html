@@ -154,8 +154,9 @@
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
                     <li><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
-                    <li><a href="{{ url_for('gallery') }}" class="nav-link">Gallery</a></li>
                     <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('environment') }}" class="nav-link">Environment</a></li>
+                    <li><a href="{{ url_for('codes_of_practice') }}" class="nav-link">Standards</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
@@ -187,8 +188,8 @@
                         <div class="hero-feature-text">ARCtick Licensed</div>
                     </div>
                     <div class="hero-feature">
-                        <div class="hero-feature-icon">🏆</div>
-                        <div class="hero-feature-text">Walk-in Coolroom Experts</div>
+                        <div class="hero-feature-icon">🌱</div>
+                        <div class="hero-feature-text">Environmentally Responsible</div>
                     </div>
                 </div>
             </div>
@@ -198,43 +199,51 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <a href="{{ url_for('services') }}" style="text-decoration: none; color: inherit;">
-                <h2 class="section-title">Our Services</h2>
-            </a>
+            <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
-                {% for service in config.services %}
-                <a href="{{ url_for('services') }}" class="service-card-link">
+                <a href="{{ url_for('service_aircon') }}" class="service-card-link">
                     <div class="service-card">
                         <div class="service-icon">
-                            <img src="{{ url_for('static', filename=service.icon) }}" alt="{{ service.title }}">
+                            <img src="{{ url_for('static', filename='images/services/aircon-installation/IMG_0850.jpeg') }}" alt="Air Conditioning Installation">
                         </div>
-                        <h3>{{ service.title }}</h3>
-                        <p>{{ service.description }}</p>
+                        <h3>Air Conditioning Installation</h3>
+                        <p>Professional installation of commercial air conditioning systems for businesses across Brisbane</p>
                         <span class="learn-more">Learn More →</span>
                     </div>
                 </a>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <a href="{{ url_for('gallery') }}" style="text-decoration: none; color: inherit;">
-                <h2 class="section-title">Gallery</h2>
-            </a>
-            <div class="gallery-carousel">
-                <button class="carousel-btn prev" id="prevBtn" aria-label="Previous image">‹</button>
-                <div class="carousel-container" id="carouselContainer">
-                    <div class="carousel-track" id="carouselTrack">
-                        <!-- Images loaded dynamically -->
+                
+                <a href="{{ url_for('service_refrigeration') }}" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="{{ url_for('static', filename='images/services/refrigeration-maintenance/IMG_0279.jpeg') }}" alt="Refrigeration Maintenance">
+                        </div>
+                        <h3>Refrigeration Maintenance</h3>
+                        <p>Preventative maintenance for commercial refrigeration equipment to keep your systems running efficiently</p>
+                        <span class="learn-more">Learn More →</span>
                     </div>
-                </div>
-                <button class="carousel-btn next" id="nextBtn" aria-label="Next image">›</button>
-            </div>
-            <div class="carousel-indicators" id="carouselIndicators">
-                <!-- Indicators loaded dynamically -->
+                </a>
+                
+                <a href="{{ url_for('service_emergency') }}" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="{{ url_for('static', filename='images/services/emergency-breakdown/IMG_0066.jpeg') }}" alt="Emergency Breakdown Repairs">
+                        </div>
+                        <h3>Emergency Breakdown Repairs</h3>
+                        <p>24/7 emergency breakdown repairs for refrigeration and air conditioning systems</p>
+                        <span class="learn-more">Learn More →</span>
+                    </div>
+                </a>
+                
+                <a href="{{ url_for('service_hvac') }}" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <img src="{{ url_for('static', filename='images/services/hvac-service/IMG_2959.jpeg') }}" alt="HVAC-R Service">
+                        </div>
+                        <h3>HVAC-R Service</h3>
+                        <p>Comprehensive HVAC-R servicing for all commercial refrigeration and air conditioning equipment</p>
+                        <span class="learn-more">Learn More →</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -243,14 +252,49 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                <a href="{{ url_for('about') }}" style="text-decoration: none; color: inherit;">
-                    <h2 class="section-title">{{ config.about.title }}</h2>
-                </a>
+                <h2 class="section-title">{{ config.about.title }}</h2>
                 <p>FrigTec is proudly led by Brandon, a Refrigeration Mechanic with over 12 years of industry experience. With a strong background in commercial refrigeration and air conditioning, FrigTec is committed to delivering reliable workmanship, professional service and quality solutions on every job.</p>
                 <p>From servicing and breakdowns to preventative maintenance and refrigeration requirements, we take pride in providing dependable results and building long-term relationships with our customers.</p>
+                <p>We're also committed to <a href="{{ url_for('environment') }}">environmentally responsible refrigeration solutions</a> through responsible refrigerant management, energy-efficient systems, and staying current with <a href="{{ url_for('codes_of_practice') }}">industry standards and codes of practice</a>.</p>
             </div>
         </div>
     </section>
+
+    <!-- Environmental Commitment Section -->
+    <section class="services" style="background-color: #1e1e1e;">
+        <div class="container">
+            <h2 class="section-title">Smarter Refrigeration. Lower Environmental Impact.</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; color: #555;">At FRIGTEC, we're committed to providing efficient and environmentally responsible commercial refrigeration and HVAC solutions.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon" style="font-size: 3rem;">🌱</div>
+                    <h3>Responsible Refrigerant Management</h3>
+                    <p>Through proper refrigerant handling, leak prevention, and recovery procedures, we help reduce environmental impact and protect the ozone layer.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="font-size: 3rem;">⚡</div>
+                    <h3>Energy-Efficient Systems</h3>
+                    <p>We design, install, and maintain refrigeration systems with energy efficiency in mind, reducing both your operating costs and carbon footprint.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="font-size: 3rem;">🔧</div>
+                    <h3>Preventative Maintenance</h3>
+                    <p>Regular maintenance keeps systems running at peak efficiency, reducing energy waste and preventing refrigerant leaks before they occur.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" style="font-size: 3rem;">🌍</div>
+                    <h3>Lower-GWP Refrigerants</h3>
+                    <p>As the industry transitions to lower-GWP refrigerants, we stay informed and ready to help you maintain efficient, future-focused systems.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="{{ url_for('environment') }}" class="btn btn-primary">Learn More About Our Environmental Commitment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Widget -->
+    {% include 'components/google_reviews_widget.html' %}
 
     <!-- Contact Section -->
     <section id="contact" class="contact">

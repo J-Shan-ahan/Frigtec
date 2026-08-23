@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Environmental Responsibility | {{ config.company.name }} - Sustainable Refrigeration Solutions</title>
+    <meta name="description" content="FRIGTEC is committed to environmentally responsible commercial refrigeration and HVAC solutions. Through responsible refrigerant management, leak prevention, and energy-efficient systems, we help reduce environmental impact.">
+    <meta name="keywords" content="sustainable refrigeration, low GWP refrigerants, energy efficient HVAC, responsible refrigerant management, environmental refrigeration brisbane">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/branding/logo1.png') }}">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/branding/logo1.png') }}" alt="{{ config.company.name }} Logo">
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('environment') }}" class="nav-link active">Environment</a></li>
+                    <li><a href="{{ url_for('codes_of_practice') }}" class="nav-link">Standards</a></li>
+                    <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Environment Hero -->
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">Smarter Refrigeration. Lower Environmental Impact.</h1>
+            <p class="page-subtitle">Efficient and environmentally responsible commercial refrigeration and HVAC solutions</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-intro">
+                <h2>Our Environmental Commitment</h2>
+                <p class="lead-text">At FRIGTEC, we're committed to providing efficient and environmentally responsible commercial refrigeration and HVAC solutions.</p>
+                <p>Through responsible refrigerant management, leak prevention, preventative maintenance and energy-efficient system operation, we help reduce unnecessary energy consumption and environmental impact.</p>
+                <p>As the industry transitions toward lower-GWP refrigerants and more sustainable technologies, FRIGTEC stays informed and ready to help businesses maintain efficient, reliable and future-focused refrigeration systems.</p>
+                <p class="lead-text" style="margin-top: 2rem;"><strong>Better efficiency. Lower impact. Smarter refrigeration.</strong></p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-icon">🌱</div>
+                    <h3>Responsible Refrigerant Management</h3>
+                    <p>We follow strict protocols for refrigerant handling, recovery, and disposal. Our ARCtick licensed technicians ensure all refrigerants are managed in accordance with environmental regulations, preventing harmful emissions and protecting the ozone layer.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">🔍</div>
+                    <h3>Leak Prevention & Detection</h3>
+                    <p>Regular leak detection and prevention is crucial for environmental protection. Our <a href="{{ url_for('services') }}">preventative maintenance programs</a> include comprehensive leak testing to identify and repair issues before they become environmental hazards.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">⚡</div>
+                    <h3>Energy-Efficient Systems</h3>
+                    <p>We design, install, and maintain refrigeration systems with energy efficiency in mind. Efficient systems not only reduce your operating costs but also minimize your carbon footprint and environmental impact.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">🔧</div>
+                    <h3>Preventative Maintenance</h3>
+                    <p>Regular maintenance keeps systems running at peak efficiency, reducing energy waste and preventing refrigerant leaks. Our <a href="{{ url_for('services') }}">maintenance services</a> help extend equipment life while minimizing environmental impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lower-GWP Refrigerants Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <h2 class="section-title">Transitioning to Lower-GWP Refrigerants</h2>
+            
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <h3>What are Lower-GWP Refrigerants?</h3>
+                    <p>GWP (Global Warming Potential) measures how much a refrigerant contributes to global warming compared to carbon dioxide. Lower-GWP refrigerants have significantly less impact on climate change while maintaining excellent cooling performance.</p>
+
+                    <h3>Industry Transition</h3>
+                    <p>The HVAC&R industry is actively transitioning away from high-GWP refrigerants like R404A and R134a toward more environmentally friendly alternatives such as R32, R290 (propane), R744 (CO₂), and other natural refrigerants.</p>
+
+                    <h3>Future-Focused Solutions</h3>
+                    <p>FRIGTEC stays informed about the latest refrigerant technologies and regulations. We can help you understand your options and plan for future refrigerant transitions, ensuring your systems remain compliant and efficient.</p>
+
+                    <h3>Retrofit & Upgrade Options</h3>
+                    <p>If you're operating older systems with high-GWP refrigerants, we can assess your equipment and recommend retrofit or upgrade options that reduce environmental impact while maintaining reliable performance.</p>
+
+                    <h3>Compliance & Regulations</h3>
+                    <p>We keep up to date with Australian refrigerant regulations and phase-out schedules, helping you stay compliant while making environmentally responsible choices. Learn more about our commitment to <a href="{{ url_for('codes_of_practice') }}">industry standards and codes of practice</a>.</p>
+                </div>
+
+                <div class="why-choose-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Compliant Refrigerant Handling</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">ARCtick</div>
+                        <div class="stat-label">Licensed Technicians</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Lower</div>
+                        <div class="stat-label">Environmental Impact</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainable Practices Section -->
+    <section class="industries-section">
+        <div class="container">
+            <h2 class="section-title">Our Sustainable Practices</h2>
+            
+            <div class="industries-grid">
+                <div class="industry-item">
+                    <h4>System Optimization</h4>
+                    <p>We optimize existing systems for maximum efficiency, reducing energy consumption and operating costs while extending equipment lifespan.</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Refrigerant Recovery</h4>
+                    <p>All refrigerant recovery is performed using certified equipment and procedures, ensuring no harmful emissions during service or decommissioning.</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Energy Audits</h4>
+                    <p>We can assess your refrigeration systems to identify opportunities for energy savings and environmental improvements.</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Sustainable Technologies</h4>
+                    <p>We stay current with emerging sustainable refrigeration technologies and can advise on the best solutions for your business.</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Waste Reduction</h4>
+                    <p>Proper maintenance and timely repairs prevent premature equipment failure, reducing waste and the environmental impact of manufacturing replacements.</p>
+                </div>
+                <div class="industry-item">
+                    <h4>Education & Advice</h4>
+                    <p>We help our clients understand how to operate their systems efficiently and make environmentally responsible decisions about their refrigeration needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="service-areas-section">
+        <div class="container">
+            <h2 class="section-title">Benefits of Environmentally Responsible Refrigeration</h2>
+            
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3>Reduced Operating Costs</h3>
+                    <p>Energy-efficient systems and proper maintenance significantly reduce electricity consumption and operating expenses.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Regulatory Compliance</h3>
+                    <p>Stay ahead of environmental regulations and refrigerant phase-outs with future-focused system design and maintenance.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Extended Equipment Life</h3>
+                    <p>Proper maintenance and efficient operation reduce wear and tear, extending the lifespan of your refrigeration investment.</p>
+                </div>
+                <div class="area-card">
+                    <h3>Corporate Responsibility</h3>
+                    <p>Demonstrate your commitment to environmental sustainability and corporate social responsibility to customers and stakeholders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Reduce Your Environmental Impact?</h2>
+            <p>Contact FRIGTEC today to discuss how we can help make your refrigeration systems more efficient and environmentally responsible</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-large">Get In Touch</a>
+                <a href="tel:{{ config.company.phone }}" class="btn btn-secondary btn-large">Call {{ config.company.phone }}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-additional">{{ config.footer.additional_info }}</p>
+                    <p class="footer-license">{{ config.footer.arc_license }}</p>
+                    <p class="footer-license">{{ config.footer.electrical_license }}</p>
+                    <p class="footer-license">{{ config.footer.qbcc_license }}</p>
+                    <p class="footer-abn">{{ config.footer.abn }}</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{ config.company.name }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

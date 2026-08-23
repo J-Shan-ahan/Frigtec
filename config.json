@@ -1,44 +1,49 @@
 {
   "company": {
     "name": "Frigtec",
-    "tagline": "Coldroom & Refrigeration Specialists",
-    "description": "Brisbane's coldroom and commercial refrigeration specialists. Expert installation, maintenance and emergency repairs for walk-in coolrooms, freezers and all commercial refrigeration systems.",
+    "tagline": "Commercial Refrigeration & HVAC Specialists",
+    "description": "Brisbane's commercial refrigeration and HVAC specialists. Expert installation, maintenance and emergency repairs for all commercial refrigeration and air conditioning systems.",
     "phone": "0421 228 034",
     "email": "Enquiries@frigtec.com.au",
     "address": "Brisbane, Queensland, Australia"
   },
   "hero": {
     "title": "FRIGTEC",
-    "subtitle": "Brisbane's coldroom and commercial refrigeration specialists. Expert installation, maintenance and 24/7 emergency repairs for walk-in coolrooms, freezers and all refrigeration systems.",
+    "subtitle": "Brisbane's commercial refrigeration and HVAC specialists. Expert installation, maintenance and 24/7 emergency repairs for all refrigeration and air conditioning systems.",
     "cta_text": "Get a Quote",
     "cta_link": "#contact"
   },
   "services": [
     {
-      "icon": "images/gallery/project-03.jpg",
-      "title": "Coldroom Installation",
-      "description": "Specialist installation of walk-in coolrooms, freezers and commercial refrigeration systems"
+      "icon": "images/services/aircon-installation/IMG_0850.jpeg",
+      "title": "Air Conditioning Installation",
+      "description": "Professional installation of commercial air conditioning systems for businesses across Brisbane"
     },
     {
-      "icon": "images/gallery/project-14.jpg",
+      "icon": "images/services/refrigeration-maintenance/IMG_0279.jpeg",
       "title": "Refrigeration Maintenance",
-      "description": "Preventative maintenance for coldrooms, coolrooms and all commercial refrigeration equipment"
+      "description": "Preventative maintenance for commercial refrigeration equipment to keep your systems running efficiently"
     },
     {
-      "icon": "images/gallery/project-06.jpg",
-      "title": "Emergency Coldroom Repairs",
-      "description": "24/7 emergency breakdown repairs for coldrooms, freezers and refrigeration systems"
+      "icon": "images/services/emergency-breakdown/IMG_0066.jpeg",
+      "title": "Emergency Breakdown Repairs",
+      "description": "24/7 emergency breakdown repairs for refrigeration and air conditioning systems"
+    },
+    {
+      "icon": "images/services/hvac-service/IMG_2959.jpeg",
+      "title": "HVAC-R Service",
+      "description": "Comprehensive HVAC-R servicing for all commercial refrigeration and air conditioning equipment"
     }
-
   ],
   "about": {
-    "title": "Coldroom & Refrigeration Specialists",
-    "content": "Frigtec specialises in commercial coldrooms and refrigeration systems across Brisbane and the Gold Coast. From walk-in coolrooms and freezers to complete refrigeration installations, we provide expert service, emergency repairs and professional maintenance to keep your cold storage running efficiently and minimise costly downtime."
+    "title": "Commercial Refrigeration & HVAC Specialists",
+    "content": "FrigTec specialises in commercial refrigeration and HVAC systems across Brisbane and the Gold Coast. From air conditioning installations to refrigeration maintenance and emergency repairs, we provide expert service to keep your systems running efficiently and minimise costly downtime."
   },
   "social": {
   "instagram": "https://www.instagram.com/frigtec_/"
 
   },
+  "google_reviews_url": "https://www.google.com/maps/place/frigtec/@-27.598581,153.1103469,9z/data=!3m1!4b1!4m6!3m5!1s0x8d38bc8b99ffc90b:0xcb91a6e4e09097d9!8m2!3d-27.598581!4d153.1103469!16s%2Fg%2F11zcv92480?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D",
   "footer": {
     "additional_info": "Fully Licensed & Insured",
     "arc_license": "ARC License: AU069163",

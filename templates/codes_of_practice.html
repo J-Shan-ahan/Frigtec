@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Codes of Practice & Industry Standards | {{ config.company.name }} - Compliant Refrigeration Solutions</title>
+    <meta name="description" content="FRIGTEC stays up to date with evolving refrigeration codes of practice, Australian Standards and industry requirements. Safe, compliant and future-focused commercial refrigeration and HVAC solutions.">
+    <meta name="keywords" content="refrigeration standards, australian standards, codes of practice, cold room safety, refrigerant regulations, compliant HVAC brisbane">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/branding/logo1.png') }}">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/branding/logo1.png') }}" alt="{{ config.company.name }} Logo">
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('environment') }}" class="nav-link">Environment</a></li>
+                    <li><a href="{{ url_for('codes_of_practice') }}" class="nav-link active">Standards</a></li>
+                    <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Standards Hero -->
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">Codes of Practice & Industry Standards</h1>
+            <p class="page-subtitle">Safe, compliant and future-focused refrigeration solutions</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-intro">
+                <h2>Codes of Practice & Industry Standards</h2>
+                <p class="lead-text">At FRIGTEC, we pride ourselves on staying up to date with evolving refrigeration codes of practice, Australian Standards and industry requirements.</p>
+                <p>From changing requirements surrounding cold room safety and entrapment alarms to refrigerant phase-outs, lower-GWP alternatives and responsible refrigerant handling, we keep informed as the HVAC&R industry evolves.</p>
+                <p class="lead-text" style="margin-top: 2rem;"><strong>Our focus is simple — delivering safe, compliant and future-focused commercial refrigeration and HVAC solutions that meet today's standards while preparing for tomorrow.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Licenses Section -->
+    <section class="why-choose-section">
+        <div class="container">
+            <h2 class="section-title">Our Licenses & Certifications</h2>
+            <p class="section-intro">FRIGTEC holds all necessary licenses and certifications to provide safe, compliant refrigeration and HVAC services throughout Queensland.</p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-icon">✓</div>
+                    <h3>ARCtick Refrigeration License</h3>
+                    <p><strong>{{ config.footer.arc_license }}</strong></p>
+                    <p>Our ARCtick license authorizes us to handle refrigerants and perform refrigeration work in compliance with Australian regulations.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">⚡</div>
+                    <h3>Electrical License</h3>
+                    <p><strong>{{ config.footer.electrical_license }}</strong></p>
+                    <p>Licensed to perform electrical work associated with refrigeration and HVAC systems throughout Queensland.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">🏗️</div>
+                    <h3>QBCC License</h3>
+                    <p><strong>{{ config.footer.qbcc_license }}</strong></p>
+                    <p>Queensland Building and Construction Commission license for commercial refrigeration and air conditioning work.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon">🛡️</div>
+                    <h3>Fully Insured</h3>
+                    <p><strong>Public Liability & Workers Compensation</strong></p>
+                    <p>Comprehensive insurance coverage for your peace of mind and protection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need Compliant Refrigeration Solutions?</h2>
+            <p>Contact FRIGTEC today to discuss how we can ensure your refrigeration systems meet all current standards and regulations</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-large">Get In Touch</a>
+                <a href="tel:{{ config.company.phone }}" class="btn btn-secondary btn-large">Call {{ config.company.phone }}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-additional">{{ config.footer.additional_info }}</p>
+                    <p class="footer-license">{{ config.footer.arc_license }}</p>
+                    <p class="footer-license">{{ config.footer.electrical_license }}</p>
+                    <p class="footer-license">{{ config.footer.qbcc_license }}</p>
+                    <p class="footer-abn">{{ config.footer.abn }}</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{ config.company.name }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

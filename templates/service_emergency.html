@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Breakdown Repairs - {{ config.company.name }} | 24/7 Brisbane</title>
+    <meta name="description" content="24/7 emergency refrigeration and HVAC breakdown repairs in Brisbane. Fast response times for commercial refrigeration emergencies.">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/branding/logo1.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/branding/logo1.png') }}" alt="{{ config.company.name }} Logo">
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link active">Services</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('environment') }}" class="nav-link">Environment</a></li>
+                    <li><a href="{{ url_for('codes_of_practice') }}" class="nav-link">Standards</a></li>
+                    <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">Emergency Breakdown Repairs</h1>
+            <p class="page-subtitle">24/7 emergency repair service for refrigeration and HVAC systems</p>
+        </div>
+    </section>
+
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-image">
+                    <img src="{{ url_for('static', filename='images/services/emergency-breakdown/IMG_0066.jpeg') }}" alt="Emergency Breakdown Repairs">
+                </div>
+                <div class="service-detail-text">
+                    <h2 class="service-detail-title">24/7 Emergency Breakdown Service</h2>
+                    <p class="service-detail-description">When your refrigeration or air conditioning system fails, every minute counts. FrigTec provides rapid emergency response to minimize product loss and business disruption. Our experienced technicians are available 24/7 to get your systems back online quickly.</p>
+                    
+                    <div class="service-features">
+                        <h3>Fast Emergency Response</h3>
+                        <p>We understand the critical nature of commercial refrigeration and HVAC systems. Our emergency service provides rapid response - typically within 2-4 hours - to diagnose and repair your system. We arrive fully equipped to handle most repairs on the first visit.</p>
+                        
+                        <h3>Common Emergency Repairs We Handle</h3>
+                        <ul>
+                            <li><strong>Compressor Failures</strong> - Complete diagnosis and replacement of faulty compressors</li>
+                            <li><strong>Refrigerant Leaks</strong> - Leak detection, repair, and system recharging</li>
+                            <li><strong>Electrical Failures</strong> - Control board repairs and wiring issues</li>
+                            <li><strong>Temperature Control Problems</strong> - Thermostat and sensor replacement</li>
+                            <li><strong>Fan Motor Failures</strong> - Condenser and evaporator fan repairs</li>
+                            <li><strong>Door & Seal Issues</strong> - Emergency gasket replacement and door adjustments</li>
+                            <li><strong>Defrost System Faults</strong> - Timer and heater element repairs</li>
+                            <li><strong>Ice Build-up Problems</strong> - Drainage and airflow corrections</li>
+                            <li><strong>Complete System Failures</strong> - Comprehensive diagnostics and repairs</li>
+                        </ul>
+                        
+                        <h3>Our Emergency Repair Process</h3>
+                        <p>When you call, we dispatch a technician immediately. Our service vehicles are fully stocked with common parts and diagnostic equipment. We quickly identify the problem, provide a clear explanation and upfront quote, and complete repairs efficiently to minimize downtime.</p>
+                        
+                        <h3>Why Choose FrigTec for Emergency Repairs?</h3>
+                        <ul>
+                            <li>Available 24 hours a day, 7 days a week</li>
+                            <li>Fast response times - typically 2-4 hours</li>
+                            <li>Fully stocked service vehicles for first-visit repairs</li>
+                            <li>Experienced technicians with 12+ years expertise</li>
+                            <li>Upfront pricing with no hidden costs</li>
+                            <li>Warranty on all emergency repair work</li>
+                            <li>Temporary cooling solutions if needed</li>
+                        </ul>
+                        
+                        <h3>Service Coverage</h3>
+                        <p>We provide emergency breakdown services throughout Brisbane, Gold Coast, Logan, Ipswich, and surrounding areas. Don't let a refrigeration or HVAC failure cost you thousands in lost product - call FrigTec immediately for expert emergency repairs.</p>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="tel:{{ config.company.phone }}" class="btn btn-primary">Call Now: {{ config.company.phone }}</a>
+                        <a href="{{ url_for('index') }}#contact" class="btn btn-secondary">Request Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-main-section">
+        <div class="container">
+            <h2 class="section-title">Our Emergency Repair Work</h2>
+            <div class="gallery-grid-full" id="serviceGallery"></div>
+        </div>
+    </section>
+
+    <section class="services-cta">
+        <div class="container">
+            <h2>Experiencing a Refrigeration or HVAC Emergency?</h2>
+            <p>Call us now for immediate assistance - we're available 24/7</p>
+            <a href="tel:{{ config.company.phone }}" class="btn btn-primary btn-large">Call {{ config.company.phone }}</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-additional">{{ config.footer.additional_info }}</p>
+                    <p class="footer-license">{{ config.footer.arc_license }}</p>
+                    <p class="footer-license">{{ config.footer.electrical_license }}</p>
+                    <p class="footer-license">{{ config.footer.qbcc_license }}</p>
+                    <p class="footer-abn">{{ config.footer.abn }}</p>                    
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{ config.company.name }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        fetch('/api/gallery/emergency-breakdown')
+            .then(response => response.json())
+            .then(images => {
+                const gallery = document.getElementById('serviceGallery');
+                images.forEach(imagePath => {
+                    const img = document.createElement('img');
+                    img.src = imagePath;
+                    img.alt = 'Emergency Breakdown Repair';
+                    gallery.appendChild(img);
+                });
+            });
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

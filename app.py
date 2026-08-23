@@ -15,11 +15,20 @@ def load_config():
     with open('config.json', 'r') as f:
         return json.load(f)
 
+def load_reviews():
+    """Load Google reviews from reviews.json"""
+    try:
+        with open('reviews.json', 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+
 @app.route('/')
 def index():
     """Main homepage"""
     config = load_config()
-    return render_template('index.html', config=config)
+    reviews = load_reviews()
+    return render_template('index.html', config=config, reviews=reviews)
 
 @app.route('/services')
 def services():
@@ -33,22 +42,77 @@ def about():
     config = load_config()
     return render_template('about.html', config=config)
 
-@app.route('/gallery')
-def gallery():
-    """Gallery page"""
+@app.route('/services/aircon-installation')
+def service_aircon():
+    """Air Conditioning Installation service page"""
     config = load_config()
-    return render_template('gallery.html', config=config)
+    return render_template('service_aircon.html', config=config)
+
+@app.route('/services/refrigeration-maintenance')
+def service_refrigeration():
+    """Refrigeration Maintenance service page"""
+    config = load_config()
+    return render_template('service_refrigeration.html', config=config)
+
+@app.route('/services/emergency-breakdown')
+def service_emergency():
+    """Emergency Breakdown Repairs service page"""
+    config = load_config()
+    return render_template('service_emergency.html', config=config)
+
+@app.route('/services/hvac-service')
+def service_hvac():
+    """HVAC-R Service page"""
+    config = load_config()
+    return render_template('service_hvac.html', config=config)
+
+@app.route('/environment')
+def environment():
+    """Environmental Responsibility page"""
+    config = load_config()
+    return render_template('environment.html', config=config)
+
+@app.route('/codes-of-practice')
+def codes_of_practice():
+    """Codes of Practice & Industry Standards page"""
+    config = load_config()
+    return render_template('codes_of_practice.html', config=config)
 
 @app.route('/api/gallery')
 def get_gallery_images():
-    """API endpoint to get gallery images dynamically"""
-    gallery_path = 'static/images/gallery'
+    """API endpoint to get gallery images dynamically from service folders"""
     images = []
     
-    if os.path.exists(gallery_path):
-        for filename in sorted(os.listdir(gallery_path)):
+    # Define service folders in order
+    service_folders = [
+        'static/images/services/aircon-installation',
+        'static/images/services/refrigeration-maintenance',
+        'static/images/services/emergency-breakdown',
+        'static/images/services/hvac-service'
+    ]
+    
+    # Collect images from all service folders
+    for folder in service_folders:
+        if os.path.exists(folder):
+            for filename in sorted(os.listdir(folder)):
+                if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.gif')):
+                    # Create the web path
+                    web_path = folder.replace('static/', '/static/')
+                    images.append(f'{web_path}/{filename}')
+    
+    return jsonify(images)
+
+@app.route('/api/gallery/<category>')
+def get_category_gallery(category):
+    """API endpoint to get gallery images for a specific service category"""
+    images = []
+    folder = f'static/images/services/{category}'
+    
+    if os.path.exists(folder):
+        for filename in sorted(os.listdir(folder)):
             if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.gif')):
-                images.append(f'/static/images/gallery/{filename}')
+                web_path = folder.replace('static/', '/static/')
+                images.append(f'{web_path}/{filename}')
     
     return jsonify(images)
 

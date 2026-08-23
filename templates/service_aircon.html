@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Air Conditioning Installation - {{ config.company.name }} | Brisbane HVAC Specialists</title>
+    <meta name="description" content="Professional commercial air conditioning installation services in Brisbane. Expert HVAC system design and installation for businesses. Licensed technicians.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/branding/logo1.png') }}">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="{{ url_for('index') }}">
+                        <img src="{{ url_for('static', filename='images/branding/logo1.png') }}" alt="{{ config.company.name }} Logo">
+                    </a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('services') }}" class="nav-link active">Services</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">About</a></li>
+                    <li><a href="{{ url_for('environment') }}" class="nav-link">Environment</a></li>
+                    <li><a href="{{ url_for('codes_of_practice') }}" class="nav-link">Standards</a></li>
+                    <li><a href="{{ url_for('index') }}#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Hero -->
+    <section class="services-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">Air Conditioning Installation</h1>
+            <p class="page-subtitle">Professional commercial air conditioning system design and installation</p>
+        </div>
+    </section>
+
+    <!-- Service Detail -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-detail-content">
+                <div class="service-detail-image">
+                    <img src="{{ url_for('static', filename='images/services/aircon-installation/IMG_0850.jpeg') }}" alt="Air Conditioning Installation">
+                </div>
+                <div class="service-detail-text">
+                    <h2 class="service-detail-title">Expert Air Conditioning Installation</h2>
+                    <p class="service-detail-description">FrigTec provides professional commercial air conditioning installation services across Brisbane and the Gold Coast. Our experienced technicians design and install energy-efficient HVAC systems tailored to your business requirements.</p>
+                    
+                    <div class="service-features">
+                        <h3>What We Install</h3>
+                        <ul>
+                            <li><strong>Split System Air Conditioners</strong> - Single and multi-head units for offices and retail spaces</li>
+                            <li><strong>Ducted Air Conditioning</strong> - Whole-building climate control solutions</li>
+                            <li><strong>VRV/VRF Systems</strong> - Variable refrigerant flow for large commercial buildings</li>
+                            <li><strong>Cassette Units</strong> - Ceiling-mounted systems for commercial spaces</li>
+                            <li><strong>Package Units</strong> - Rooftop and ground-mounted commercial HVAC</li>
+                        </ul>
+                        
+                        <h3>Our Installation Process</h3>
+                        <p>We begin with a comprehensive site assessment to understand your cooling requirements, building layout, and budget. Our team designs an energy-efficient system that provides optimal comfort while minimizing operating costs. Every installation is completed to the highest standards with full compliance to Australian regulations.</p>
+                        
+                        <h3>Why Choose FrigTec for AC Installation?</h3>
+                        <ul>
+                            <li>ARCtick licensed and fully insured technicians</li>
+                            <li>Energy-efficient system design to reduce power bills</li>
+                            <li>Compliance with AS/NZS standards and building codes</li>
+                            <li>Minimal disruption to your business operations</li>
+                            <li>Comprehensive warranty on all installations</li>
+                            <li>Post-installation support and maintenance plans</li>
+                        </ul>
+                        
+                        <h3>Installation Benefits</h3>
+                        <p>A professionally installed air conditioning system provides consistent comfort for your staff and customers, improves indoor air quality, and operates efficiently to keep energy costs down. We ensure proper sizing, placement, and configuration for maximum performance and longevity.</p>
+                    </div>
+                    
+                    <div class="service-cta">
+                        <a href="{{ url_for('index') }}#contact" class="btn btn-primary">Get a Quote</a>
+                        <a href="tel:{{ config.company.phone }}" class="btn btn-secondary">Call {{ config.company.phone }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="gallery-main-section">
+        <div class="container">
+            <h2 class="section-title">Our Air Conditioning Installation Projects</h2>
+            <div class="gallery-grid-full" id="serviceGallery">
+                <!-- Images loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+        <div class="container">
+            <h2>Need Professional Air Conditioning Installation?</h2>
+            <p>Contact us today for a free consultation and quote</p>
+            <a href="{{ url_for('index') }}#contact" class="btn btn-primary btn-large">Contact Us Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-additional">{{ config.footer.additional_info }}</p>
+                    <p class="footer-license">{{ config.footer.arc_license }}</p>
+                    <p class="footer-license">{{ config.footer.electrical_license }}</p>
+                    <p class="footer-license">{{ config.footer.qbcc_license }}</p>
+                    <p class="footer-abn">{{ config.footer.abn }}</p>                    
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 {{ config.company.name }}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Load service-specific gallery images
+        fetch('/api/gallery/aircon-installation')
+            .then(response => response.json())
+            .then(images => {
+                const gallery = document.getElementById('serviceGallery');
+                images.forEach(imagePath => {
+                    const img = document.createElement('img');
+                    img.src = imagePath;
+                    img.alt = 'Air Conditioning Installation Project';
+                    gallery.appendChild(img);
+                });
+            });
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
