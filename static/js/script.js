@@ -166,54 +166,62 @@ function setPositionByIndex() {
     updateCarousel();
 }
 
-// Carousel navigation buttons
-document.getElementById('prevBtn').addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + galleryImages.length) % galleryImages.length;
-    setPositionByIndex();
-    resetAutoAdvance();
-});
+// Carousel navigation buttons (only if they exist on the page)
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 
-document.getElementById('nextBtn').addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % galleryImages.length;
-    setPositionByIndex();
-    resetAutoAdvance();
-});
-
-// Auto-advance carousel
-let autoAdvance = setInterval(() => {
-    currentSlide = (currentSlide + 1) % galleryImages.length;
-    setPositionByIndex();
-}, 5000);
-
-function resetAutoAdvance() {
-    clearInterval(autoAdvance);
-    autoAdvance = setInterval(() => {
-        currentSlide = (currentSlide + 1) % galleryImages.length;
-        setPositionByIndex();
-    }, 5000);
-}
-
-// Pause auto-advance on hover
-document.querySelector('.gallery-carousel').addEventListener('mouseenter', () => {
-    clearInterval(autoAdvance);
-});
-
-document.querySelector('.gallery-carousel').addEventListener('mouseleave', () => {
-    resetAutoAdvance();
-});
-
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
         currentSlide = (currentSlide - 1 + galleryImages.length) % galleryImages.length;
         setPositionByIndex();
         resetAutoAdvance();
-    } else if (e.key === 'ArrowRight') {
+    });
+
+    nextBtn.addEventListener('click', () => {
         currentSlide = (currentSlide + 1) % galleryImages.length;
         setPositionByIndex();
         resetAutoAdvance();
+    });
+
+    // Auto-advance carousel
+    let autoAdvance = setInterval(() => {
+        currentSlide = (currentSlide + 1) % galleryImages.length;
+        setPositionByIndex();
+    }, 5000);
+
+    function resetAutoAdvance() {
+        clearInterval(autoAdvance);
+        autoAdvance = setInterval(() => {
+            currentSlide = (currentSlide + 1) % galleryImages.length;
+            setPositionByIndex();
+        }, 5000);
     }
-});
+
+    // Pause auto-advance on hover
+    const galleryCarousel = document.querySelector('.gallery-carousel');
+    if (galleryCarousel) {
+        galleryCarousel.addEventListener('mouseenter', () => {
+            clearInterval(autoAdvance);
+        });
+
+        galleryCarousel.addEventListener('mouseleave', () => {
+            resetAutoAdvance();
+        });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            currentSlide = (currentSlide - 1 + galleryImages.length) % galleryImages.length;
+            setPositionByIndex();
+            resetAutoAdvance();
+        } else if (e.key === 'ArrowRight') {
+            currentSlide = (currentSlide + 1) % galleryImages.length;
+            setPositionByIndex();
+            resetAutoAdvance();
+        }
+    });
+}
 
 // ===== Contact Form =====
 const contactForm = document.getElementById('contactForm');
@@ -240,7 +248,7 @@ if (contactForm) {
             // Create a form element to submit to TradeHQ iframe
             const hiddenForm = document.createElement('form');
             hiddenForm.method = 'POST';
-            hiddenForm.action = 'https://tradehq.com.au/frigtec/enquire';
+            hiddenForm.action = 'https://tradehq.com.au/jsenc/enquire';
             hiddenForm.target = 'tradehqFrame';
             hiddenForm.style.display = 'none';
             
@@ -328,3 +336,135 @@ document.querySelectorAll('.service-card, .contact-item').forEach(el => {
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
+// ===== Image Lightbox for Gallery =====
+function createLightbox() {
+    // Create lightbox elements
+    const lightbox = document.createElement('div');
+    lightbox.id = 'imageLightbox';
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+        <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
+        <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+    `;
+    document.body.appendChild(lightbox);
+    
+    let currentImageIndex = 0;
+    let galleryImages = [];
+    
+    // Close lightbox
+    lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Navigation functions
+    function showImage(index) {
+        if (galleryImages.length === 0) return;
+        
+        currentImageIndex = index;
+        if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+        if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+        
+        const img = lightbox.querySelector('#lightboxImg');
+        img.src = galleryImages[currentImageIndex].src;
+        img.alt = galleryImages[currentImageIndex].alt;
+        
+        const caption = lightbox.querySelector('#lightboxCaption');
+        caption.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+    }
+    
+    // Previous button
+    lightbox.querySelector('#lightboxPrev').addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImage(currentImageIndex - 1);
+    });
+    
+    // Next button
+    lightbox.querySelector('#lightboxNext').addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImage(currentImageIndex + 1);
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'flex') {
+            if (e.key === 'ArrowLeft') showImage(currentImageIndex - 1);
+            if (e.key === 'ArrowRight') showImage(currentImageIndex + 1);
+        }
+    });
+    
+    // Open lightbox function
+    window.openLightbox = function(imgElement, images) {
+        galleryImages = images;
+        currentImageIndex = images.findIndex(img => img.src === imgElement.src);
+        showImage(currentImageIndex);
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    };
+}
+
+// Initialize lightbox
+createLightbox();
+
+// Add click handlers to gallery images
+window.initializeGalleryLightbox = function() {
+    console.log('Initializing gallery lightbox...');
+    const galleryGrid = document.getElementById('serviceGallery');
+    console.log('Gallery grid found:', galleryGrid);
+    
+    if (galleryGrid) {
+        const images = Array.from(galleryGrid.querySelectorAll('img')).map(img => ({
+            src: img.src,
+            alt: img.alt
+        }));
+        
+        console.log('Found images:', images.length);
+        
+        if (images.length > 0) {
+            galleryGrid.querySelectorAll('img').forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => {
+                    console.log('Image clicked!', img.src);
+                    window.openLightbox(img, images);
+                });
+            });
+            console.log('Lightbox initialized successfully for', images.length, 'images');
+        } else {
+            console.log('No images found in gallery');
+        }
+    } else {
+        console.log('Gallery grid not found');
+    }
+};
+
+// Try to initialize immediately (for static galleries)
+if (document.getElementById('serviceGallery')) {
+    // Wait for DOM to be fully loaded
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(window.initializeGalleryLightbox, 1000);
+        });
+    } else {
+        setTimeout(window.initializeGalleryLightbox, 1000);
+    }
+}

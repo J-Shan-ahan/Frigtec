@@ -123,6 +123,7 @@
         </div>
     </footer>
 
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script>
         fetch('/api/gallery/refrigeration-maintenance')
             .then(response => response.json())
@@ -134,8 +135,11 @@
                     img.alt = 'Refrigeration Maintenance Project';
                     gallery.appendChild(img);
                 });
+                // Initialize lightbox after images are loaded
+                if (window.initializeGalleryLightbox) {
+                    window.initializeGalleryLightbox();
+                }
             });
     </script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
